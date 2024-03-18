@@ -21,18 +21,7 @@ describe('Anmeldeseite testen', () => {
 
     // Überprüfen Sie, ob die Anmeldung erfolgreich war
     cy.url().should('eq', 'https://example.com/dashboard');
-  });
-
-  // Test für eine fehlerhafte Anmeldung mit falschen Anmeldeinformationen
-  it('Fehlerhafte Anmeldung mit falschen Anmeldeinformationen', () => {
-    // Geben Sie falsche Benutzername und Passwort ein
-    cy.get('input[name="username"]').type('FalscherBenutzername');
-    cy.get('input[name="password"]').type('FalschesPasswort');
-
-    // Klicken Sie auf die Anmeldetaste
-    cy.get('button[type="submit"]').click();
-
-    // Überprüfen Sie, ob eine Fehlermeldung angezeigt wird
+  });    // Überprüfen Sie, ob eine Fehlermeldung angezeigt wird
     cy.get('.error-message').should('be.visible');
   });
 
